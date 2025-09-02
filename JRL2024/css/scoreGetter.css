@@ -1,0 +1,21 @@
+.column1{
+	width:99%;
+	display:inline-block;
+	text-align:center;
+	
+}
+.column2{
+	width:49.5%;
+	display:inline-block;
+	text-align:center;
+
+	}
+.column4{
+	width:24.5%;
+	display:inline-block;
+	text-align:center;
+	
+}
+body{
+	margin:0;
+}

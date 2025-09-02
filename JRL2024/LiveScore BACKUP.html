@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<head>
+  <title> LiveScore </title>
+  <link rel="stylesheet" href="css/LiveScoreStyle.css" type="text/css" >
+  <script src="js/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+	<div id="background" style="
+		background: url(img/JRL_2024_Logo_background.png) center center / 150% no-repeat;
+		height: 1080px;
+	"> </div>
+	
+	<div class="main" id="main">  <!--Makes everything in this div part of the main body-->
+		<div id="centered">
+			<h2 id="matchNum">Match #: </h2> <!--Add in header for Match#-->
+			<div>
+				<div id="blueSide"> <!--Groups entire blue side-->
+					<div class="spacer"> </div> <!--Spacer-->
+					<div class="team"> <!--Groups blue teams-->
+						<h3 class="blueTeam" id="blue1">Blue 1:123</h3> 
+						<h3 class="blueTeam" id="blue2">Blue 2:123</h3> 
+						<h3 class="blueTeam" id="blue3">Blue 3:123</h3> 
+					</div>
+					<div>
+						<h3 class="score" id="blueScore">50</h3> <!--Adds score-->
+					</div>
+					<div style="display:flex;justify-content: space-between;">
+						<div class="balanceCount" id="earth_count"> 12 </div>
+						<div class="earth">
+							<img src="../jrl2024/img/earth.png"  width="100%" height="100%">
+						</div>
+						<div class="water">
+							<img src="../jrl2024/img/water.png"  width="100%" height="100%">
+						</div>
+						
+						<div class="balanceCount" id="water_count"> 5 </div>
+					</div>
+				</div>
+				</div>
+				<div id="redSide">
+					<div class="spacer"> </div>
+					<div class="team">
+						<h3 class="redTeam" id="red1">Red 1:123</h3>
+						<h3 class="redTeam" id="red2">Red 2:123</h3>
+						<h3 class="redTeam" id="red3">Red 3:123</h3> 
+					</div>
+					<div>
+						<h3 class="score" id="redScore"> 50</h3>
+					</div>
+					<div style="display:flex;justify-content: space-between;">
+						<div class="balanceCount" id="fire_count"> 0 </div>
+						<div class="fire">
+							<img src="../jrl2024/img/fire.png"  width="100%" height="100%">
+						</div>
+						<div class="air">
+							<img src="../jrl2024/img/air.png"  width="100%" height="100%">
+						</div>
+						<div class="balanceCount" id="air_count"> 89 </div>
+					</div>
+					
+				</div>
+				
+				<h2 id="time"> Time : 2:15 </h2>
+			</div>
+		</div>
+		<div id="Videos" style="height:100%"><!-- Videos -->
+			<video id = "RedWin" width="100%" height="100%" muted >
+				<source src="./Videos/JRL winner video - red.mp4" type="video/mp4">
+			</video> 
+			<video id = "BlueWin" width="100%" height="100%" muted >
+				<source src="./Videos/JRL winner video - blue.mp4" type="video/mp4">
+			</video> 
+			<video id = "Tie" width="100%" height="100%" muted >
+				<source src="./Videos/JRL winner video - tie.mp4" type="video/mp4">
+			</video> 
+		</div>
+	</div>
+	<div id="ScoreReveal" style="display: grid; grid-template-columns: 40% 20% 40%; gap: 20px;">
+		<h2 id="rev_matchNum" style="grid-column: 1/4;grid-row: 1/1;display: flex;justify-content: center;">Match # 6</h2>
+		<div id="rev_blue" style="
+			grid-column: 1;
+			grid-row: 2;
+			width: 60%;
+			text-align: end;
+			justify-self: right;
+			">
+				<div class="team" style="
+					display: flex;
+					flex-direction: column;	
+					"><div style="display: flex;font-size: 150%;">
+						<h2 class="blueTeam" id="rev_blue1">35</h2>
+						<h2 class="blueTeam" id="rev_blue2">21</h2>
+						<h2 class="blueTeam" id="rev_blue3">28</h2>
+					</div>
+				</div>
+				<h4 class="score" id="rev_blueAuto">0</h4>
+				<h4 class="score" id="rev_blueTele">24</h4>
+				<h4 class="score" id="rev_blueEndgame">0</h4>
+				<h4 class="score" id="rev_redPenalties">0</h4>
+				<h3 class="score" id="rev_blueScore">24</h3>
+		</div>
+		<div id="rev_center" style="
+			text-align: center;
+			display: grid;
+			grid-column: 2;
+			grid-row-2/FONT-WEIGHT: 200;
+			grid-row: 2;
+			color: white;
+			font-size: 300%;
+			">
+			<div>Teams</div>
+			<div style="
+    background-color: #ff05;
+">Auto</div>
+			<div style="
+    background-color: #3f35;
+">Tele</div>
+			<div style="
+    background-color: #f0f5;
+">Endgame</div>
+			<div>Penalties</div>
+			<div>Total</div>
+		</div>
+		<div id="rev_red" style="
+			grid-column: 3;
+			grid-row: 2;
+			/* display: flex; */
+			width: 80%;
+			flex-direction: column;
+			text-align: start;
+			">
+				<div class="team" style="
+					display: grid;
+					/* grid-row: 1; */
+					/* display: flex; */
+					flex-direction: column;
+					"><div style="display: flex;font-size: 150%;">
+						<h2 class="redTeam" id="rev_red1">14</h2>
+						<h2 class="redTeam" id="rev_red2">11</h2>
+						<h2 class="redTeam" id="rev_red3">4</h2>
+					</div>
+				</div>
+			<h4 class="score" id="rev_redAuto">0</h4>
+			<h4 class="score" id="rev_redTele">0</h4>
+			<h4 class="score" id="rev_redEndgame">0</h4>
+			<h4 class="score" id="rev_bluePenalties">0</h4>
+			<h3 class="score" id="rev_redScore">0</h3>
+
+		</div>
+	</div>
+    <script type="text/javascript" src="js/scoreCalc.js"></script>
+    <script type="text/javascript" src="js/LiveScoreScript.js"></script>
+</body>
+
