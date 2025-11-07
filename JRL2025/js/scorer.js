@@ -1,26 +1,21 @@
 var counter = {
-   
-	"auto_fire1": 0, "auto_fire2": 0, 
-	"tele_fire1": 0, "tele_fire2": 0, "tele_fire3": 0,
 	
-	"auto_air1": 0, "auto_air2": 0, 
-	"tele_air1": 0, "tele_air2": 0, "tele_air3": 0,
+	"red_auto_mob": 0, 
+	"red_auto_diamond_depo": 0, "red_auto_ore_depo": 0, "red_auto_diamond_ref": 0,  "red_auto_ore_ref": 0,
+	"red_tele_diamond_depo": 0, "red_tele_ore_depo": 0, "red_tele_diamond_ref": 0,  "red_tele_ore_ref": 0,
 	
-	"auto_water1": 0, "auto_water2": 0, 
-	"tele_water1": 0, "tele_water2": 0, "tele_water3": 0,
 	
-	"auto_earth1": 0, "auto_earth2": 0, 
-	"tele_earth1": 0, "tele_earth2": 0, "tele_earth3": 0,
-	
-	"red_auto_mob": 0, "red_auto_disp": 0, "red_auto_pool": 0, "red_tele_pool": 0,
-	"red_endgame_climb": 0, "red_endgame_park": 0, "red_endgame_wizlow": 0, "red_endgame_wizmid": 0, "red_endgame_wizhigh": 0,
-	
-	"blue_auto_mob": 0, "blue_auto_disp": 0, "blue_auto_pool": 0, "blue_tele_pool": 0,
-	"blue_endgame_climb": 0, "blue_endgame_park": 0, "blue_endgame_wizlow": 0, "blue_endgame_wizmid": 0, "blue_endgame_wizhigh": 0,
-	
+	"blue_auto_mob": 0, 
+	"blue_auto_diamond_depo": 0, "blue_auto_ore_depo": 0, "blue_auto_diamond_ref": 0,  "blue_auto_ore_ref": 0,
+	"blue_tele_diamond_depo": 0, "blue_tele_ore_depo": 0, "blue_tele_diamond_ref": 0,  "blue_tele_ore_ref": 0,
+
+	"red_endgame_climb": 0, "red_endgame_park": 0,
+	"blue_endgame_climb": 0, "blue_endgame_park": 0, 
+
 	"red_foul": 0, "red_techfoul": 0,
 	"blue_foul": 0, "blue_techfoul": 0,
 	
+
  
 };
 pos = "blue1";

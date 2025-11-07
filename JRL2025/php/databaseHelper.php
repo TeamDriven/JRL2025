@@ -2,6 +2,6 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "jrl2024";
+$dbname = "jrl2025";
 
 ?>
