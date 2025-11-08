@@ -10,39 +10,28 @@ function min(x,y){
 
 var redScore = 0;
 
-var redBonusScore = 0;
-var redBalanceScore = 0;
 var redTeleScore = 0;
 var redAutoScore = 0;
-
-var fire = 0;
-var air = 0;
+var redEndgameScore = 0;
 
 var blueScore = 0;
 
-var blueBonusScore = 0;
-var blueBalanceScore = 0;
 var blueTeleScore = 0;
 var blueAutoScore = 0;
+var blueEndgameScore = 0;
 
-var water = 0;
-var earth = 0;
-	
+
 function calcScoreFromData(info) {
+    console.log("calc from data")
     redScore = 0;
-    redBonusScore = 0;
-	redBalanceScore = 0;
     redTeleScore = 0;
     redAutoScore = 0;
-	fire = 0;
-	air = 0;
+    redEndgameScore = 0;
+
     blueScore = 0;
-    blueBonusScore = 0;
-    blueBalanceScore = 0;
     blueTeleScore = 0;
     blueAutoScore = 0;
-	water = 0;
-    earth = 0;
+    blueEndgameScore = 0;
 	
 	redPenalties = 0;
 	bluePenalties = 0;
@@ -52,112 +41,57 @@ function calcScoreFromData(info) {
 	bluePenalties += parseInt(info["blue_foul"]) * 5;
 	bluePenalties += parseInt(info["blue_techfoul"]) * 15;
 
+    redAutoScore += parseInt(info["red_auto_mob"]) * 7;
 
+    redAutoScore += parseInt(info["red_auto_diamond_ref"]) *8;
+    redAutoScore += parseInt(info["red_auto_ore_ref"]) *10;
+    redAutoScore += parseInt(info["red_auto_diamond_depo"]) *5;
+    redAutoScore += parseInt(info["red_auto_ore_ref"]) *6;
 
-    redAutoScore += parseInt(info["red_auto_mob"]) * 5;
-    redAutoScore += parseInt(info["red_auto_disp"]) * 8;
-    redAutoScore += parseInt(info["red_auto_pool"]) * 8;
-
-	redAutoScore += parseInt(info["auto_fire1"])* 12;
-	redAutoScore += parseInt(info["auto_fire2"])* 12;
-	redTeleScore += parseInt(info["tele_fire1"])* 6;
-	redTeleScore += parseInt(info["tele_fire2"])* 6;
-	redTeleScore += parseInt(info["tele_fire3"])* 6;
-	
-	redAutoScore += parseInt(info["auto_air1"])* 12;
-	redAutoScore += parseInt(info["auto_air2"])* 12;
-	redTeleScore += parseInt(info["tele_air1"])* 6;
-	redTeleScore += parseInt(info["tele_air2"])* 6;
-	redTeleScore += parseInt(info["tele_air3"])* 6;
+    redTeleScore += parseInt(info["red_tele_diamond_ref"]) *5;
+    redTeleScore += parseInt(info["red_tele_ore_ref"]) *8;
+    redTeleScore += parseInt(info["red_tele_diamond_depo"]) *3;
+    redTeleScore += parseInt(info["red_tele_ore_depo"]) *5;
 		
-	redTeleScore += parseInt(info["red_tele_pool"]) * 4;
-
-	redBonusScore += parseInt(info["red_endgame_climb"]) * 15;
-	redBonusScore += parseInt(info["red_endgame_park"]) * 5;
-    redBonusScore += parseInt(info["red_endgame_wizlow"]) * 5;
-    redBonusScore += parseInt(info["red_endgame_wizmid"]) * 10;
-    redBonusScore += parseInt(info["red_endgame_wizhigh"]) * 20;	
-
-	fire += parseInt(info["auto_fire1"]);
-	fire += parseInt(info["auto_fire2"]);
-	fire += parseInt(info["tele_fire1"]);
-	fire += parseInt(info["tele_fire2"]);
-	fire += parseInt(info["tele_fire3"]);
+	redEndgameScore += parseInt(info["red_endgame_climb"]) * 15;
+	redEndgameScore += parseInt(info["red_endgame_park"]) * 7;
 	
-	air += parseInt(info["auto_air1"]);
-	air += parseInt(info["auto_air2"]);
-	air += parseInt(info["tele_air1"]);
-	air += parseInt(info["tele_air2"]);
-	air += parseInt(info["tele_air3"]);
-	
-	redBalanceScore = min(fire,air) * 6;
-
-	redTeleScore += redBalanceScore;
-    redScore = redBonusScore + redAutoScore + redTeleScore + bluePenalties;
+    redScore = redEndgameScore + redAutoScore + redTeleScore + bluePenalties;
+    console.log(redScore);
 	
 	//--------------------------------------------//
 	//--------------------------------------------//
 	
-	blueAutoScore += parseInt(info["blue_auto_mob"]) * 5;
-    blueAutoScore += parseInt(info["blue_auto_disp"]) * 8;
-    blueAutoScore += parseInt(info["blue_auto_pool"]) * 8;
- 
-	blueAutoScore += parseInt(info["auto_water1"])* 12;
-	blueAutoScore += parseInt(info["auto_water2"])* 12;
-	blueTeleScore += parseInt(info["tele_water1"])* 6;
-	blueTeleScore += parseInt(info["tele_water2"])* 6;
-	blueTeleScore += parseInt(info["tele_water3"])* 6;
-	
-	blueAutoScore += parseInt(info["auto_earth1"])* 12;
-	blueAutoScore += parseInt(info["auto_earth2"])* 12;
-	blueTeleScore += parseInt(info["tele_earth1"])* 6;
-	blueTeleScore += parseInt(info["tele_earth2"])* 6;
-	blueTeleScore += parseInt(info["tele_earth3"])* 6;
-	
-	blueTeleScore += parseInt(info["blue_tele_pool"]) * 4;
+    blueAutoScore += parseInt(info["blue_auto_mob"]) * 7;
 
-	blueBonusScore += parseInt(info["blue_endgame_climb"]) * 15;
-	blueBonusScore += parseInt(info["blue_endgame_park"]) *5;
-    blueBonusScore += parseInt(info["blue_endgame_wizlow"]) * 5;
-    blueBonusScore += parseInt(info["blue_endgame_wizmid"]) * 10;
-    blueBonusScore += parseInt(info["blue_endgame_wizhigh"]) * 20;
+    blueAutoScore += parseInt(info["blue_auto_diamond_ref"]) *8;
+    blueAutoScore += parseInt(info["blue_auto_ore_ref"]) *10;
+    blueAutoScore += parseInt(info["blue_auto_diamond_depo"]) *5;
+    blueAutoScore += parseInt(info["blue_auto_ore_ref"]) *6;
+
+    blueTeleScore += parseInt(info["blue_tele_diamond_ref"]) *5;
+    blueTeleScore += parseInt(info["blue_tele_ore_ref"]) *8;
+    blueTeleScore += parseInt(info["blue_tele_diamond_depo"]) *3;
+    blueTeleScore += parseInt(info["blue_tele_ore_depo"]) *5;
 		
-	water += parseInt(info["auto_water1"]);
-	water += parseInt(info["auto_water2"]);
-	water += parseInt(info["tele_water1"]);
-	water += parseInt(info["tele_water2"]);
-	water += parseInt(info["tele_water3"]);
+	blueEndgameScore += parseInt(info["blue_endgame_climb"]) * 15;
+	blueEndgameScore += parseInt(info["blue_endgame_park"]) * 7;
 	
-	earth += parseInt(info["auto_earth1"]);
-	earth += parseInt(info["auto_earth2"]);
-	earth += parseInt(info["tele_earth1"]);
-	earth += parseInt(info["tele_earth2"]);
-	earth += parseInt(info["tele_earth3"]);
-	
-	blueBalanceScore = min(water,earth) * 6;
-	
-
-	blueTeleScore += blueBalanceScore;
-    blueScore = blueBonusScore + blueAutoScore + blueTeleScore + redPenalties;
+    blueScore = blueEndgameScore + blueAutoScore + blueTeleScore + redPenalties;
+    console.log(blueScore);
 
 
     var scores = {
         red_score: redScore,
         red_auto_score: redAutoScore,
 		red_tele_score: redTeleScore,
-		//red_balance_score: redBalanceScore,
-		red_bonus_score: redBonusScore,
-		fire_count: fire,
-		air_count: air,
+        red_endgame_score: redEndgameScore,
 		red_penalties: redPenalties,
 		
         blue_score: blueScore,
         blue_auto_score: blueAutoScore,
         blue_tele_score: blueTeleScore,
-		//blue_balance_score: blueBalanceScore,
-        blue_bonus_score: blueBonusScore,
-        water_count: water,
-		earth_count: earth,
+        blue_endgame_score: blueEndgameScore,
 		blue_penalties: bluePenalties
     };
 
@@ -177,7 +111,7 @@ function calcScore() {
     var blueScore = 0;
     var redScore = 0;
     var scores = {};
-	console.log(blueBonusScore ,blueAutoScore ,blueTeleScore, blueBalanceScore)
+	console.log(blueEndgameScore ,blueAutoScore ,blueTeleScore)
     $.ajax({
         //give the url to go to (the .. means go up a folder)
         url: './php/GetCurrentMatch.php',
@@ -262,8 +196,7 @@ function addMatchToTeam(pos, matchData, scores, winScenario) {
 
             newData["auto_score"] = parseInt(teamData["auto_score"]) + scores[alliance + "_auto_score"];
             newData["tele_score"] = parseInt(teamData["tele_score"]) + scores[alliance + "_tele_score"];
-            newData["bonus_score"] = parseInt(teamData["bonus_score"]) + scores[alliance + "_bonus_score"];
-			//newData["balance_score"] = parseInt(teamData["balance_score"]) + scores[alliance + "_balance_score"];
+            newData["endgame_score"] = parseInt(teamData["endgame_score"]) + scores[alliance + "_endgame_score"];
             if (newData["matches_played"] <= MAX_MATCHES){
 				updateTeamData(newData);
 			}
@@ -274,10 +207,9 @@ function addMatchToTeam(pos, matchData, scores, winScenario) {
 function clearTeamData() {
 
 	var newData = {
-		"balance_score": 0,
+		"endgame_score": 0,
 		"auto_score": 0,
 		"tele_score": 0,
-		"bonus_score": 0,
 		"qualification_score": 0,
 		"matches_played": 0
 		

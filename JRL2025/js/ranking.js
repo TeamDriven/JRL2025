@@ -17,9 +17,8 @@ function updateRanks() {
 				newHTML += "<td class='dark'>" + team["team_num"] + "</td>";
 				//newHTML += "<td class='dark'>" + team["team_name"] + "</td>";
 				newHTML += "<td class='light'>" + team["qualification_score"] + "</td>";
-				newHTML += "<td class='light'>" + team["bonus_score"] + "</td>";
+				newHTML += "<td class='light'>" + team["endgame_score"] + "</td>";
 				newHTML += "<td class='light'>" + team["auto_score"] + "</td>";
-				//newHTML += "<td class='light'>" + team["balance_score"] + "</td>";				
 				newHTML += "<td class='light'>" + team["tele_score"] + "</td>";
 				newHTML += "</tr>";
 			}

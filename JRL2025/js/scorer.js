@@ -23,9 +23,6 @@ lastTeamNum = 0;
 scoreConfirm = false;
 
 var RadioGroups = {
-	"Wizard1":[-1,[]], //index of selected, then list of DOM elements.    -1 to force first press to always do something
-	"Wizard2":[-1,[]],
-	"Wizard3":[-1,[]],
 	"Endgame1":[-1,[]],
 	"Endgame2":[-1,[]],
 	"Endgame3":[-1,[]]
@@ -35,11 +32,8 @@ var RadioGroups = {
 function ResetRadio( init = false){
 	
 	var RadioBtns = [];
-	var groups = ["BlueWizards","BlueEndgame","RedWizards","RedEndgame"];
+	var groups = ["BlueEndgame","RedEndgame"];
 	
-	RadioGroups["Wizard1"][0] = -1;
-	RadioGroups["Wizard2"][0] = -1;
-	RadioGroups["Wizard3"][0] = -1;
 	RadioGroups["Endgame1"][0] = -1;
 	RadioGroups["Endgame2"][0] = -1;
 	RadioGroups["Endgame3"][0] = -1;

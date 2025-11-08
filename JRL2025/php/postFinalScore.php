@@ -17,8 +17,7 @@ foreach ($_POST as $key => $value) {
        && $key != "blue3"
        && $key != "red1"
        && $key != "red2" 
-       && $key != "red3" 
-       && $key != "match_name") {
+       && $key != "red3" ) {
         $sql .= $key." = " .$value. ",";
     }
 }
@@ -28,7 +27,7 @@ $sql .= "score_lock=1, played=1";
 $sql .= " WHERE match_num=".$_POST['match_num'];
 
 $sql .= ";";
-
+echo $sql;
 if($conn->query($sql) == TRUE){
   echo "final score submit successful";
 } else {

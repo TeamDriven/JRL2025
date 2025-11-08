@@ -28,6 +28,8 @@ if ($currentMatch != 999 && $score_lock != 1){
  
   $sql = "UPDATE matches SET ";
   foreach ($_POST as $key => $value) {
+    if(empty($value))
+      $value = 0;
     $sql .= $key." = ".$value.",";
   }
   

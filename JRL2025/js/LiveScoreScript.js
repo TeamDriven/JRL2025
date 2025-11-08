@@ -128,11 +128,11 @@ $(document).ready(function () {
 				if(!revealScore) $("#ScoreReveal").hide();
 				
 				
-				$("#water_count").html(info["water_count"]);
-                $("#earth_count").html(info["earth_count"]);
+				// $("#water_count").html(info["water_count"]);
+                // $("#earth_count").html(info["earth_count"]);
 				
-				$("#fire_count").html(info["fire_count"]);
-                $("#air_count").html(info["air_count"]);
+				// $("#fire_count").html(info["fire_count"]);
+                // $("#air_count").html(info["air_count"]);
             }
         });
 
@@ -163,8 +163,8 @@ function updateReveal(){
 	$("#rev_red3").html(lastData["red3"]);
 	$("#rev_redScore").html(lastData["red_score"]);
 	$("#rev_blueScore").html(lastData["blue_score"]);
-	$("#rev_redEndgame").html(lastData["red_bonus_score"]);
-	$("#rev_blueEndgame").html(lastData["blue_bonus_score"]);
+	$("#rev_redEndgame").html(lastData["red_endgame_score"]);
+	$("#rev_blueEndgame").html(lastData["blue_endgame_score"]);
 	$("#rev_redTele").html(lastData["red_tele_score"]);
 	$("#rev_blueTele").html(lastData["blue_tele_score"]);
 	$("#rev_redAuto").html(lastData["red_auto_score"]);
