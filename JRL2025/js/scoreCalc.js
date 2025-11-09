@@ -37,16 +37,17 @@ function calcScoreFromData(info) {
 	bluePenalties = 0;
 	
 	redPenalties += parseInt(info["red_foul"]) * 5;
-	redPenalties += parseInt(info["red_techfoul"]) * 15;
+	redPenalties += parseInt(info["red_tech_foul"]) * 15;
+
 	bluePenalties += parseInt(info["blue_foul"]) * 5;
-	bluePenalties += parseInt(info["blue_techfoul"]) * 15;
+	bluePenalties += parseInt(info["blue_tech_foul"]) * 15;
 
     redAutoScore += parseInt(info["red_auto_mob"]) * 7;
 
     redAutoScore += parseInt(info["red_auto_diamond_ref"]) *8;
     redAutoScore += parseInt(info["red_auto_ore_ref"]) *10;
     redAutoScore += parseInt(info["red_auto_diamond_depo"]) *5;
-    redAutoScore += parseInt(info["red_auto_ore_ref"]) *6;
+    redAutoScore += parseInt(info["red_auto_ore_depo"]) *6;
 
     redTeleScore += parseInt(info["red_tele_diamond_ref"]) *5;
     redTeleScore += parseInt(info["red_tele_ore_ref"]) *8;
@@ -65,9 +66,9 @@ function calcScoreFromData(info) {
     blueAutoScore += parseInt(info["blue_auto_mob"]) * 7;
 
     blueAutoScore += parseInt(info["blue_auto_diamond_ref"]) *8;
-    blueAutoScore += parseInt(info["blue_auto_ore_ref"]) *10;
+    blueAutoScore += parseInt(info["blue_auto_ore_ref"]) * 10;
     blueAutoScore += parseInt(info["blue_auto_diamond_depo"]) *5;
-    blueAutoScore += parseInt(info["blue_auto_ore_ref"]) *6;
+    blueAutoScore += parseInt(info["blue_auto_ore_depo"]) *6;
 
     blueTeleScore += parseInt(info["blue_tele_diamond_ref"]) *5;
     blueTeleScore += parseInt(info["blue_tele_ore_ref"]) *8;
@@ -94,7 +95,6 @@ function calcScoreFromData(info) {
         blue_endgame_score: blueEndgameScore,
 		blue_penalties: bluePenalties
     };
-
     return scores;
 }
 
@@ -119,7 +119,6 @@ function calcScore() {
         //this says what todo as soon as all the data has been loaded
         success: function (data) {
             scores = calcScoreFromMatchJSON(data);
-
 
             $.ajax({
                 url: './php/updateStatus.php',

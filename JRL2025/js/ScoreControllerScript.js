@@ -37,7 +37,7 @@ function shiftLastPress(newPress){
 
 changeLockBtn = function (locked) {
 	post('./php/updateStatus.php', { score_lock: (locked ? 1 : 0) });
-	post('./php/sendScore.php', { score_lock: (locked ? 1 : 0) });
+	// post('./php/sendScore.php', { score_lock: (locked ? 1 : 0) });
 	//console.log(JSON.stringify({lock_score: (locked?1:0)}));
 	isLocked = locked;
 	if (isLocked) {

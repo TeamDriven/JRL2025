@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "SELECT * FROM teams ORDER BY qualification_score DESC,
-    bonus_score DESC, auto_score DESC, tele_score DESC, team_num";
+    endgame_score DESC, auto_score DESC, tele_score DESC, team_num";
 //WHERE teamNum='".$_POST['teamNum']."'";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {

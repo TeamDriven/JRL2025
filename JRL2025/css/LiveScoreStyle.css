@@ -6,7 +6,7 @@
 }
 
 html { 
-	background: url(../img/red_blue_background.png) no-repeat
+	background: url(../img/cave.png) no-repeat
 		  center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -87,7 +87,7 @@ img{
 	text-shadow: 5px 5px black;
 }
 
-}
+
 .element {
 	color : white;
 	font-size : 100%;

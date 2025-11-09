@@ -12,8 +12,8 @@ var counter = {
 	"red_endgame_climb": 0, "red_endgame_park": 0,
 	"blue_endgame_climb": 0, "blue_endgame_park": 0, 
 
-	"red_foul": 0, "red_techfoul": 0,
-	"blue_foul": 0, "blue_techfoul": 0,
+	"red_foul": 0, "red_tech_foul": 0,
+	"blue_foul": 0, "blue_tech_foul": 0,
 	
 
  

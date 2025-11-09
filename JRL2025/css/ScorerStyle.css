@@ -113,23 +113,9 @@ button:active {
    "TeleTitle TeleTitle"
     "Earth-Side Water-Side"
    "EndTitle EndTitle"
-	"Wizards Endgame"; 
+	"Endgame Endgame "; 
 }
 
-.Wizards{
-  padding: 5px 5px;
-  background-color: #ffffff;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 5px 5px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "Label1 wizNone1 wizLow1 wizMid1 wizHigh1"
-    "Label2 wizNone2 wizLow2 wizMid2 wizHigh2"
-    "Label3 wizNone3 wizLow3 wizMid3 wizHigh3";
-  grid-area: Wizards;
-}
 .Endgame{
   padding: 5px 5px;
   background-color: #ffffff;
@@ -161,16 +147,26 @@ button:active {
   background-color: #ffffff;
 	padding: 5px 5px;
 	display: grid;
-  grid-template-columns: 0.65fr 1fr 0.65fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 3px 3px;
   grid-auto-flow: row;
   grid-template-areas:
-    "Label1 Counter1 Label4 Counter4"
-    "Label2 Counter2 Label5 Counter5"
-    "Label3 Counter3 Label6 Counter6";
+    ". Label1 Counter1 ."
+    "Label2 . . Label3 "
+    "Counter2 . . Counter4"
+    "Counter3 . . Counter5";
   grid-area: Auto-Section;
 }
+.Label1 {grid-area: Label1;}
+.Label2 {grid-area: Label2;}
+.Label3 {grid-area: Label3;}
+.Counter1 {grid-area: Counter1;}
+.Counter2 {grid-area: Counter2;}
+.Counter3 {grid-area: Counter3;}
+.Counter4 {grid-area: Counter4;}
+.Counter5 {grid-area: Counter5;}
+
 .Title {
 	grid-area: Title;
 	text-align: center;
@@ -257,20 +253,4 @@ button:active {
     "RedLabel Counter2"
     "BlueLabel Counter3";
   grid-area: Earth-Single;
-}
-
-.Red-Ball{
-  height: 15px;
-  width: 15px;
-  background-color: #f00;
-  border-radius: 50%;
-  display: inline-block;
-	
-}
-.Blue-Ball{
-  height: 15px;
-  width: 15px;
-  background-color: #00f;
-  border-radius: 50%;
-  display: inline-block;
 }
