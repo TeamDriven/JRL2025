@@ -1,4 +1,4 @@
-var numMatches = 9;
+var numMatches = 8;
 
 function createMatches(matches, teams) {
     if (confirm("would you like to generate matches?")) {
@@ -139,4 +139,5 @@ $('#download').click(function () {
             download("schedule.txt", output);
         }
     });
+
 });
